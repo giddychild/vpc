@@ -12,14 +12,14 @@ resource "aws_eip" "elastic-ip-for-ngw-1b" {
   }
 }
 
-resource "aws_eip" "elastic-ip-palo-alto-vm-1a" {
+resource "aws_eip" "elastic-ip-ec2-a" {
   vpc  = true
   tags = {
-    Name = "Palo Alto VM EIP A"
+    Name = "EC2 Server EIP A"
   }
 }
 
-resource "aws_eip_association" "elastic-ip-palo-alto-association" {
-  network_interface_id = aws_network_interface.palo_alto_eni_01.id
-  allocation_id = aws_eip.elastic-ip-palo-alto-vm-1a.id
+resource "aws_eip_association" "elastic-ip-ec2-association" {
+  network_interface_id = aws_network_interface.ec2_eni_01.id
+  allocation_id = aws_eip.elastic-ip-ec2-a.id
 }
