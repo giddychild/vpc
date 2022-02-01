@@ -1,0 +1,5 @@
+After deploying the TF script, run the below command in CLI to modify the transit gateway
+
+aws ec2 modify-transit-gateway-vpc-attachment --transit-gateway-attachment-id <tgw-attach-xyx> --options ApplianceModeSupport="enable"
+
+aws ec2 modify-transit-gateway-vpc-attachment --transit-gateway-attachment-id tgw-attach-0e6e7f3838392fb72 --options ApplianceModeSupport="enable"
